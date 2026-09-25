@@ -1,7 +1,12 @@
 import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PHONE = "0000 000 0000"
-EMAIL = "land@example.com"
+PHONE = "01257 443 250"
+EMAIL = "John.Winstanley@storyhomes.co.uk"
+SH = "https://www.storyhomes.co.uk"
+CONTACTS = [
+ ("John Winstanley", "Managing Director, Strategic Land", "01257 443 250", "John.Winstanley@storyhomes.co.uk"),
+ ("David Robinson", "Head of Strategic Land, North East &amp; North Cumbria", "0191 917 8605", "David.Robinson@storyhomes.co.uk"),
+]
 
 NAV = [("index.html","Home"),("about.html","About Us"),("landowners.html","For Landowners"),("projects.html","Projects"),("news.html","News")]
 
@@ -49,7 +54,7 @@ FOOTER = f"""<footer class="site-footer">
     <div class="footer-grid">
       <div>
         <a class="logo" href="index.html"><img class="logo__mark" src="assets/img/logo.svg" alt=""><span class="logo__text">Story Homes<small>Land</small></span></a>
-        <p style="margin-top:20px">The strategic land and promotion arm of Story Homes, working with landowners to unlock the value of their land through the planning system.</p>
+        <p style="margin-top:20px">The dedicated Strategic Land division of Story Homes. We promote and buy land across the North West, North East, Cumbria and Scotland.</p>
         <div class="socials">
           <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
           <a href="#" aria-label="X"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2H21l-6.6 7.5L22 22h-6l-4.7-6.2L5.8 22H3l7-8L2 2h6.1l4.3 5.7zM17.2 20h1.6L7 3.8H5.3z"/></svg></a>
@@ -68,18 +73,19 @@ FOOTER = f"""<footer class="site-footer">
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="landowners.html#promotion">Land Promotion</a></li>
-          <li><a href="landowners.html#options">Option Agreements</a></li>
-          <li><a href="landowners.html#sales">Outright Purchase</a></li>
-          <li><a href="landowners.html#faq">FAQs</a></li>
+          <li><a href="landowners.html#promotion">Strategic Land Promotion</a></li>
+          <li><a href="landowners.html#options">Deal Structures</a></li>
+          <li><a href="landowners.html#sales">Land with Planning</a></li>
+          <li><a href="{SH}/land-and-planning/planning-applications/" target="_blank" rel="noopener">Planning Applications</a></li>
+          <li><a href="{SH}/" target="_blank" rel="noopener">Story Homes</a></li>
         </ul>
       </div>
       <div>
         <h4>Get in touch</h4>
         <ul>
-          <li><a href="tel:{PHONE.replace(' ','')}">{PHONE}</a></li>
-          <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-          <li>Head Office address<br>Town, Postcode</li>
+          <li>John Winstanley<br><a href="tel:01257443250">01257 443 250</a></li>
+          <li>David Robinson<br><a href="tel:01919178605">0191 917 8605</a></li>
+          <li><a href="contact.html">All contact details</a></li>
         </ul>
       </div>
     </div>
@@ -110,10 +116,10 @@ CTA = f"""<section class="section">
     <div class="cta-band reveal">
       <div>
         <h2>Do you own land with development potential?</h2>
-        <p>Speak to our land team for a free, confidential and no-obligation appraisal of your site. We'll give you an honest view of its prospects.</p>
+        <p>We welcome approaches from landowners and agents. Get in touch and a member of our Strategic Land team will respond quickly with a clear decision on your site.</p>
       </div>
       <div class="cta-band__actions">
-        <a class="btn btn--primary arrow" href="contact.html">Request a land appraisal</a>
+        <a class="btn btn--primary arrow" href="contact.html">Submit your land</a>
         <a class="cta-band__phone" href="tel:{PHONE.replace(' ','')}">or call {PHONE}</a>
       </div>
     </div>
@@ -131,56 +137,64 @@ ICON = {
 }
 
 PROJECTS = [
- ("north-west","North West","Land north of Meadow Lane","village.svg","Outline consent secured for a sustainable village extension with new public open space and a play area.","32","280","Consented"),
- ("cumbria","Cumbria","Fellside Farm","fields.svg","A former agricultural holding allocated in the emerging Local Plan following our representations.","18","150","Allocated"),
- ("north-east","North East","Hillcrest Meadows","masterplan.svg","A landscape-led masterplan delivering family homes, affordable housing and a new community orchard.","45","400","Consented"),
- ("scotland","Scotland","Burnside Park","hero-landscape.svg","Planning permission in principle granted for a phased development on the edge of an established town.","26","220","Consented"),
- ("north-west","North West","Oakfield Road","meeting.svg","Working with three neighbouring landowners under a collaboration agreement to bring forward a comprehensive scheme.","60","550","In promotion"),
- ("cumbria","Cumbria","Beckside Pastures","village.svg","Full planning permission secured and the site is now under construction by Story Homes.","12","95","Under construction"),
+ ("north-west","Lancashire","Former Camelot Theme Park","village.svg","Outline planning permission for new homes on a former leisure site, including affordable housing and community benefits.","350","Outline consent","/stories/story-homes-welcomes-outline-planning-permission-for-350-new-homes-on-former-camelot-theme-park-site/"),
+ ("north-west","Preston","Lea Road","masterplan.svg","Detailed permission for 161 homes on the northern parcel and outline permission for up to 120 on the southern parcel.","281","Consented","/stories/story-homes-receives-green-light-to-bring-up-to-281-new-high-quality-homes-to-preston/"),
+ ("north-west","Lancashire","Cuerdale Garden Village","hero-landscape.svg","An outline application for a new garden village with homes, employment space, a local centre and a primary school.","1,300","Application submitted",""),
+ ("north-east","Newcastle upon Tyne","Killingworth Moor","fields.svg","Around 34 hectares bought from Northumberland Estates. It follows earlier deals together at Rake Lane and Alnwick.","34 ha","Land acquired","/stories/story-homes-purchases-landmark-new-site-at-killingworth-moor-newcastle-upon-tyne/"),
+ ("north-west","Fylde","Wrea Green","village.svg","Outline planning permission secured for new homes on the edge of the village.","100","Outline consent","/outline-planning-permission-granted-for-wrea-green-homes/"),
+ ("cumbria","Cumbria","Land east of The Thorpe, Greystoke","fields.svg","Outline planning permission for a sensitively scaled scheme of new homes in the village.","40","Outline consent","/outline-planning-permission-granted-for-homes-in-greystoke/"),
+ ("north-west","Chorley","Coppull","meeting.svg","Planning approval for a new neighbourhood of high-quality family homes.","118","Consented","/stories/story-homes-receives-green-light-to-bring-118-high-quality-new-homes-to-coppull/"),
+ ("cumbria","Cumbria","Clifton, Penrith","village.svg","Plans for new homes in Clifton approved by the local planning authority.","","Approved","/eden-district-council-approves-plans-for-homes-in-clifton-penrith/"),
+ ("north-west","Lancashire","Halton","masterplan.svg","Outline planning permission granted for new homes.","","Outline consent","/outline-planning-permission-granted-for-homes-in-halton/"),
 ]
 
 def project_card(p, delay=""):
-    region, rname, name, img, text, acres, homes, status = p
+    region, rname, name, img, text, homes, status, link = p
+    href = SH + link if link else "projects.html"
+    ext = ' target="_blank" rel="noopener"' if link else ""
+    unit = "site area" if "ha" in homes else "homes"
+    facts = f'<div class="card__facts"><span><strong>{homes}</strong>{unit}</span><span><strong>{status}</strong>stage</span></div>' if homes else f'<div class="card__facts"><span><strong>{status}</strong>stage</span></div>'
     return f"""      <article class="card reveal" data-region="{region}">
         <div class="card__media"><img src="assets/img/{img}" alt="Illustration of {name}"></div>
         <div class="card__body">
-          <div class="card__meta">{rname} · {status}</div>
+          <div class="card__meta">{rname}</div>
           <h3>{name}</h3>
           <p>{text}</p>
-          <div class="card__facts"><span><strong>{acres}</strong>acres</span><span><strong>{homes}</strong>homes</span></div>
-          <a class="card__link" href="projects.html">View project</a>
+          {facts}
+          <a class="card__link" href="{href}"{ext}>{"Read the story" if link else "Find out more"}</a>
         </div>
       </article>"""
 
 NEWS = [
- ("fields.svg","Planning","12 September 2026","Outline consent secured for 280 homes","Our planning team secured outline consent following a positive committee resolution, delivering a strong result for the landowning family."),
- ("masterplan.svg","Insight","28 August 2026","What the latest planning reforms mean for landowners","We look at how recent changes to national planning policy could affect the prospects of land on the edge of settlements."),
- ("meeting.svg","Company","3 August 2026","Story Homes Land expands its team","We've welcomed two new land managers to support our growing pipeline across the North of England and Scotland."),
- ("village.svg","Planning","15 July 2026","Site allocated in emerging Local Plan","Following several years of promotion, our site has been identified as a housing allocation in the draft Local Plan."),
- ("hero-landscape.svg","Insight","1 July 2026","Option agreement or promotion agreement?","A plain-English guide to the most common ways landowners can work with a land promoter, and how to choose."),
- ("fields.svg","Community","18 June 2026","Community consultation draws strong turnout","Over 200 residents attended our consultation event to help shape proposals for new homes and green space."),
+ ("meeting.svg","Company","Story Homes appoints new Head of Land North West","A new appointment to lead land acquisition across the North West.","/story-homes-appoints-new-head-of-land-north-west-to-drive-acquisition-strategy/"),
+ ("fields.svg","Land","Landmark site purchased at Killingworth Moor","Around 34 hectares bought from Northumberland Estates, continuing a long-standing relationship.","/stories/story-homes-purchases-landmark-new-site-at-killingworth-moor-newcastle-upon-tyne/"),
+ ("village.svg","Planning","Outline consent for 350 homes at the former Camelot site","Permission to regenerate a former theme park with new homes and community benefits.","/stories/story-homes-welcomes-outline-planning-permission-for-350-new-homes-on-former-camelot-theme-park-site/"),
+ ("masterplan.svg","Planning","Green light for up to 281 homes in Preston","Detailed and outline permissions secured across two parcels at Lea Road.","/stories/story-homes-receives-green-light-to-bring-up-to-281-new-high-quality-homes-to-preston/"),
+ ("meeting.svg","Company","Investment in the North East Land and Planning team","Strengthening the team ahead of planned growth in the North East.","/investment-in-land-and-planning-team-ahead-of-planned-growth-in-the-north-east/"),
+ ("hero-landscape.svg","Company","Story Homes and Story Contracting celebrate 35 years","Marking 35 years of building homes and communities.","/story-homes-and-story-contracting-celebrate-35th-anniversary/"),
 ]
 
 def news_card(n):
-    img, cat, date, title, text = n
+    img, cat, title, text, link = n
     return f"""      <article class="card reveal">
         <div class="card__media"><img src="assets/img/{img}" alt=""></div>
         <div class="card__body">
-          <div class="card__meta">{cat} · {date}</div>
+          <div class="card__meta">{cat}</div>
           <h3>{title}</h3>
           <p>{text}</p>
-          <a class="card__link" href="news.html">Read more</a>
+          <a class="card__link" href="{SH}{link}" target="_blank" rel="noopener">Read on storyhomes.co.uk</a>
         </div>
       </article>"""
 
 TESTIMONIALS = f"""<section class="section section--cream">
-  <div class="container">
-    <div class="center"><span class="eyebrow">What landowners say</span></div>
-    <div class="slider quote">
-      <div class="slide"><blockquote>The team were straightforward from day one. They explained every stage of the planning process and kept us informed throughout. We couldn't have asked for more.</blockquote><cite><strong>Landowner</strong> · Placeholder testimonial, North West</cite></div>
-      <div class="slide"><blockquote>Having a housebuilder behind the promotion gave us real confidence that the site would actually be delivered once planning was secured.</blockquote><cite><strong>Farming family</strong> · Placeholder testimonial, Cumbria</cite></div>
-      <div class="slide"><blockquote>They took the time to understand what mattered to our family and structured an agreement that worked for everyone involved.</blockquote><cite><strong>Estate trustee</strong> · Placeholder testimonial, Scotland</cite></div>
-      <div class="slider__dots"></div>
+  <div class="container split">
+    <div class="split__media reveal"><img src="assets/img/fields.svg" alt=""></div>
+    <div class="reveal">
+      <span class="eyebrow">Partnership in practice</span>
+      <h2>Long-term relationships with landowners</h2>
+      <p>Our work with Northumberland Estates shows how we partner. After successful deals together at Rake Lane and Alnwick, we bought around 34 hectares at Killingworth Moor in Newcastle upon Tyne.</p>
+      <p>Many landowners come back to us, or recommend us, because we make quick decisions, deal in good faith and do what we say.</p>
+      <a class="btn btn--outline arrow" href="{SH}/stories/story-homes-purchases-landmark-new-site-at-killingworth-moor-newcastle-upon-tyne/" target="_blank" rel="noopener">Read about Killingworth Moor</a>
     </div>
   </div>
 </section>
@@ -197,9 +211,9 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
     <div class="hero__content">
       <span class="eyebrow" style="color:var(--gold)">Strategic Land &amp; Promotion</span>
       <h1>Unlocking the true value of your land</h1>
-      <p>We partner with landowners to secure planning permission and achieve the best possible value for land with development potential, backed by the strength of Story Homes.</p>
+      <p>The dedicated Strategic Land division of Story Homes. Our approach is simple and commercial, and it aims to get the most value from your land at the point planning permission is granted.</p>
       <div class="hero__ctas">
-        <a class="btn btn--primary arrow" href="contact.html">Get a free land appraisal</a>
+        <a class="btn btn--primary arrow" href="contact.html">Submit your land</a>
         <a class="btn btn--ghost" href="landowners.html">How it works</a>
       </div>
     </div>
@@ -208,10 +222,10 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
 </section>
 
 <div class="stats" aria-label="Key figures">
-  <div class="stat"><div class="stat__num" data-count="5000" data-suffix="+">5,000+</div><div class="stat__label">Acres under promotion</div></div>
-  <div class="stat"><div class="stat__num" data-count="12000" data-suffix="+">12,000+</div><div class="stat__label">Plots in our land pipeline</div></div>
-  <div class="stat"><div class="stat__num" data-count="95" data-suffix="%">95%</div><div class="stat__label">Planning success rate</div></div>
   <div class="stat"><div class="stat__num" data-count="35" data-suffix="+">35+</div><div class="stat__label">Years of Story Homes</div></div>
+  <div class="stat"><div class="stat__num" data-count="4">4</div><div class="stat__label">Regions: North West, North East, Cumbria &amp; Scotland</div></div>
+  <div class="stat"><div class="stat__num" data-count="100" data-suffix="%">100%</div><div class="stat__label">Promotion costs funded by us</div></div>
+  <div class="stat"><div class="stat__num" data-count="15">15</div><div class="stat__label">Years: how far ahead our strategic pipeline looks</div></div>
 </div>
 
 <section class="section" id="intro">
@@ -219,12 +233,12 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
     <div class="reveal">
       <span class="eyebrow">Who we are</span>
       <h2>A land promoter with a housebuilder behind it</h2>
-      <p class="lead">Story Homes Land is the strategic land division of Story Homes, one of the leading independent housebuilders in the North of England and Scotland.</p>
-      <p>We work with landowners, farmers, estates and developers to promote land through the planning process. We fund the full cost and risk of the planning process, and our in-house expertise gives landowners certainty that their site will be delivered.</p>
+      <p class="lead">Story Homes has a dedicated Strategic Land division. It handles land that is ready to develop now as well as longer-term strategic sites.</p>
+      <p>We're always looking for new sites and opportunities, and we welcome approaches from landowners and agents. Our management structure lets us shape each deal around what the individual landowner needs.</p>
       <ul class="checklist">
-        <li>No upfront costs: we fund planning, surveys and technical work</li>
-        <li>Your interests aligned with ours to achieve the best value</li>
-        <li>A proven housebuilder ready to deliver once consent is secured</li>
+        <li>We finance every part of the land promotion, keeping your risk low</li>
+        <li>Quick decisions on whether we want to buy your site</li>
+        <li>We work in good faith from first conversation to completion</li>
       </ul>
       <a class="btn btn--outline arrow" href="about.html">About Story Homes Land</a>
     </div>
@@ -237,15 +251,15 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
     <div class="center reveal">
       <span class="eyebrow">Why work with us</span>
       <h2>A partnership built on trust</h2>
-      <p class="lead">Every piece of land is different. We tailor our approach to your circumstances and goals, and we're open with you at every step.</p>
+      <p class="lead">No two landowners are the same. We shape each deal around your needs and keep the process simple and commercial.</p>
     </div>
     <div class="grid grid--3" style="margin-top:48px">
-      <div class="feature reveal"><div class="feature__icon">{ICON['shield']}</div><h3>We take the risk</h3><p>We cover the costs of promotion, from technical surveys to planning appeals, so you don't have to.</p></div>
-      <div class="feature reveal"><div class="feature__icon">{ICON['pound']}</div><h3>Maximising value</h3><p>Our agreements are structured to secure the best possible price for your land on the open market.</p></div>
-      <div class="feature reveal"><div class="feature__icon">{ICON['map']}</div><h3>Local knowledge</h3><p>Regional teams who understand local planning policy, politics and the communities we work in.</p></div>
-      <div class="feature reveal"><div class="feature__icon">{ICON['people']}</div><h3>In-house expertise</h3><p>Planners, land managers, technical and design specialists working together under one roof.</p></div>
-      <div class="feature reveal"><div class="feature__icon">{ICON['home']}</div><h3>Certainty of delivery</h3><p>As part of Story Homes, we have the capability to build out the sites we promote.</p></div>
-      <div class="feature reveal"><div class="feature__icon">{ICON['leaf']}</div><h3>Lasting legacy</h3><p>Landscape-led places that respect their setting and create a legacy you can be proud of.</p></div>
+      <div class="feature reveal"><div class="feature__icon">{ICON['shield']}</div><h3>We fund promotion</h3><p>We finance every part of promoting your land through planning, keeping your risk low.</p></div>
+      <div class="feature reveal"><div class="feature__icon">{ICON['pound']}</div><h3>Maximising value</h3><p>Our approach is designed to get the most value from your land when planning permission is secured.</p></div>
+      <div class="feature reveal"><div class="feature__icon">{ICON['map']}</div><h3>Regional teams</h3><p>Land and planning specialists across the North West, North East, Cumbria and Scotland.</p></div>
+      <div class="feature reveal"><div class="feature__icon">{ICON['people']}</div><h3>Speedy decisions</h3><p>You'll get a quick answer on whether your site is one we'd look to buy, with no drawn-out uncertainty.</p></div>
+      <div class="feature reveal"><div class="feature__icon">{ICON['home']}</div><h3>Flexible deal structures</h3><p>Our management structure lets us tailor terms to each landowner's requirements.</p></div>
+      <div class="feature reveal"><div class="feature__icon">{ICON['leaf']}</div><h3>Good faith</h3><p>Straightforward, honest dealings throughout, backed by a housebuilder that builds the homes itself.</p></div>
     </div>
   </div>
 </section>
@@ -255,7 +269,7 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
     <div class="center reveal">
       <span class="eyebrow">Our process</span>
       <h2>From field to planning permission</h2>
-      <p class="lead">A clear, collaborative journey. We manage every stage while keeping you informed and involved.</p>
+      <p class="lead">Some sites already have outline planning permission. Others are short, medium or long-term strategic sites that could take up to 15 years to come forward. We handle both.</p>
     </div>
     <div class="process">
       <div class="step reveal"><div class="step__num"></div><h3>Appraisal</h3><p>A free, confidential assessment of your land's potential.</p></div>
@@ -271,7 +285,7 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
 <section class="section">
   <div class="container">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:40px">
-      <div class="reveal"><span class="eyebrow">Our projects</span><h2 style="margin:0">Recent successes</h2></div>
+      <div class="reveal"><span class="eyebrow">Our projects</span><h2 style="margin:0">Recent planning successes</h2></div>
       <a class="btn btn--outline arrow" href="projects.html">View all projects</a>
     </div>
     <div class="grid grid--3">
@@ -300,8 +314,7 @@ home = head("Story Homes Land | Strategic Land & Promotion", "Story Homes Land w
 write("index.html", home)
 
 # ---------------- ABOUT ----------------
-TEAM = [("Name Surname","Managing Director"),("Name Surname","Land Director"),("Name Surname","Planning Director"),("Name Surname","Technical Director"),
-        ("Name Surname","Senior Land Manager"),("Name Surname","Land Manager"),("Name Surname","Senior Planner"),("Name Surname","Land Coordinator")]
+TEAM = [(n, r) for n, r, _, _ in CONTACTS]
 team_html = "\n".join(f"""      <div class="person reveal"><div class="person__photo"><svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#e6f0eb"/><circle cx="100" cy="80" r="36" fill="#9dbd98"/><path d="M30 200c6-44 36-66 70-66s64 22 70 66z" fill="#3d8a6c"/></svg></div><h3>{n}</h3><p>{r}</p></div>""" for n,r in TEAM)
 
 about = head("About Us | Story Homes Land", "Story Homes Land is the strategic land division of Story Homes.") + header("about.html") + page_hero("About Us","About Story Homes Land","The strategic land specialists within Story Homes, combining land promotion expertise with the delivery strength of an established housebuilder.") + f"""<main>
@@ -310,9 +323,9 @@ about = head("About Us | Story Homes Land", "Story Homes Land is the strategic l
     <div class="reveal">
       <span class="eyebrow">Our story</span>
       <h2>Rooted in the North, built on relationships</h2>
-      <p>Story Homes was founded on a commitment to quality and to the communities it builds in. Story Homes Land extends that commitment to the landowners we partner with.</p>
-      <p>We identify land with long-term development potential and promote it through the planning system, managing the process from start to finish. Our teams bring together land, planning, design and technical specialists with deep regional knowledge.</p>
-      <p>Because we're part of a housebuilder, we understand what makes a site deliverable, and we can take it all the way from a field to a thriving new neighbourhood.</p>
+      <p>Story Homes builds new homes across the North East, North West, Cumbria and Scotland. Together with Story Contracting, it recently celebrated 35 years in business.</p>
+      <p>Our Strategic Land division sources the land those homes are built on. We look for a region-by-region mix: sites that already have outline planning permission, and short, medium and long-term strategic sites without planning today, some taking up to 15 years to come forward.</p>
+      <p>Because we build the homes ourselves, we know what makes a site deliverable. We can take land from promotion through planning to a finished new community.</p>
     </div>
     <div class="split__media reveal"><img src="assets/img/village.svg" alt="Illustration of new homes"></div>
   </div>
@@ -322,25 +335,25 @@ about = head("About Us | Story Homes Land", "Story Homes Land is the strategic l
   <div class="container">
     <div class="center reveal"><span class="eyebrow">Our values</span><h2>What guides us</h2></div>
     <div class="grid grid--4" style="margin-top:48px">
-      <div class="feature reveal"><h3>Integrity</h3><p>We are honest about a site's prospects and transparent in every agreement we make.</p></div>
+      <div class="feature reveal"><h3>Good faith</h3><p>We are honest about a site's prospects and act in good faith throughout.</p></div>
       <div class="feature reveal"><h3>Partnership</h3><p>We treat landowners as long-term partners, not transactions.</p></div>
-      <div class="feature reveal"><h3>Expertise</h3><p>Specialist knowledge across planning, land, design and infrastructure.</p></div>
-      <div class="feature reveal"><h3>Quality</h3><p>We create places people are proud to call home, built to last.</p></div>
+      <div class="feature reveal"><h3>Speed</h3><p>We give quick decisions so landowners aren't left waiting.</p></div>
+      <div class="feature reveal"><h3>Commercial focus</h3><p>A simple, commercial approach to getting the most value from your land.</p></div>
     </div>
   </div>
 </section>
 
 <div class="stats" aria-label="Key figures">
-  <div class="stat"><div class="stat__num" data-count="5000" data-suffix="+">5,000+</div><div class="stat__label">Acres under promotion</div></div>
-  <div class="stat"><div class="stat__num" data-count="60" data-suffix="+">60+</div><div class="stat__label">Active sites</div></div>
-  <div class="stat"><div class="stat__num" data-count="4">4</div><div class="stat__label">Regional teams</div></div>
   <div class="stat"><div class="stat__num" data-count="35" data-suffix="+">35+</div><div class="stat__label">Years of Story Homes</div></div>
+  <div class="stat"><div class="stat__num" data-count="4">4</div><div class="stat__label">Regions: North West, North East, Cumbria &amp; Scotland</div></div>
+  <div class="stat"><div class="stat__num" data-count="100" data-suffix="%">100%</div><div class="stat__label">Promotion costs funded by us</div></div>
+  <div class="stat"><div class="stat__num" data-count="15">15</div><div class="stat__label">Years: how far ahead our strategic pipeline looks</div></div>
 </div>
 
 <section class="section" id="team">
   <div class="container">
-    <div class="center reveal"><span class="eyebrow">Our people</span><h2>Meet the team</h2><p class="lead">Experienced land and planning professionals who know the regions we work in.</p></div>
-    <div class="grid grid--4" style="margin-top:48px">
+    <div class="center reveal"><span class="eyebrow">Our people</span><h2>Meet the team</h2><p class="lead">Talk to the people who lead our Strategic Land business.</p></div>
+    <div class="grid grid--2" style="margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto">
 {team_html}
     </div>
   </div>
@@ -352,7 +365,7 @@ about = head("About Us | Story Homes Land", "Story Homes Land is the strategic l
 write("about.html", about)
 
 # ---------------- LANDOWNERS ----------------
-land = head("For Landowners | Story Homes Land", "How Story Homes Land works with landowners to promote land and maximise its value.") + header("landowners.html") + page_hero("For Landowners","Working with landowners","Whether you own a single field or a large estate, we can help you understand your land's potential and take it through the planning system.", "fields.svg") + f"""<main>
+land = head("For Landowners | Story Homes Land", "How Story Homes Land works with landowners to promote land and maximise its value.") + header("landowners.html") + page_hero("For Landowners","Working with landowners","Whether your land already has planning or is a long-term prospect, we'll shape a deal around you and give you a quick, clear decision.", "fields.svg") + f"""<main>
 <section class="section" id="promotion">
   <div class="container split">
     <div class="reveal">
@@ -360,10 +373,11 @@ land = head("For Landowners | Story Homes Land", "How Story Homes Land works wit
       <h2>What is land promotion?</h2>
       <p>Land promotion is the process of securing planning permission on land that is currently undeveloped, so it can be sold for development at a much higher value than its existing use.</p>
       <p>Obtaining planning permission is complex, expensive and uncertain. A land promoter takes on that cost and risk, bringing the expertise needed to navigate Local Plans, technical studies and planning applications.</p>
+      <p>Story Homes will finance all aspects of the land promotion and keep your risk low. We aim to get the most value from your land at the point planning permission is secured.</p>
       <ul class="checklist">
-        <li>We fund all planning, legal and technical costs</li>
-        <li>We contribute to your professional fees</li>
-        <li>You retain ownership of your land throughout</li>
+        <li>We fund the promotion, so you don't carry the cost</li>
+        <li>Deals shaped around your requirements</li>
+        <li>You keep ownership of your land during promotion</li>
       </ul>
     </div>
     <div class="split__media reveal"><img src="assets/img/masterplan.svg" alt="Illustration of a masterplan"></div>
@@ -372,11 +386,11 @@ land = head("For Landowners | Story Homes Land", "How Story Homes Land works wit
 
 <section class="section section--cream">
   <div class="container">
-    <div class="center reveal"><span class="eyebrow">Ways to work together</span><h2>Flexible agreements</h2><p class="lead">We'll recommend the structure that best suits your land, circumstances and objectives.</p></div>
+    <div class="center reveal"><span class="eyebrow">Ways to work together</span><h2>Deals structured around you</h2><p class="lead">Our management structure lets us shape each deal around the individual landowner. Typical routes include:</p></div>
     <div class="grid grid--3" style="margin-top:48px">
       <div class="feature reveal" id="promotion-agreement"><div class="feature__icon">{ICON['map']}</div><h3>Promotion agreement</h3><p>We promote your land at our cost and risk. Once planning is secured, the site is sold on the open market and we receive an agreed share of the proceeds, so our interests are fully aligned with yours.</p></div>
       <div class="feature reveal" id="options"><div class="feature__icon">{ICON['shield']}</div><h3>Option agreement</h3><p>We secure the right to buy your land once planning permission is granted, at an agreed discount to market value. It gives you certainty of a purchaser and a clear route to sale.</p></div>
-      <div class="feature reveal" id="sales"><div class="feature__icon">{ICON['pound']}</div><h3>Outright purchase</h3><p>For land with existing planning permission or a strong planning case, we can offer to buy outright, conditionally or unconditionally.</p></div>
+      <div class="feature reveal" id="sales"><div class="feature__icon">{ICON['pound']}</div><h3>Land with planning</h3><p>We buy land that is ready to develop, including sites with outline planning permission already in place, and give you a quick decision on whether it suits us.</p></div>
     </div>
   </div>
 </section>
@@ -396,12 +410,12 @@ land = head("For Landowners | Story Homes Land", "How Story Homes Land works wit
 
 <section class="section">
   <div class="container">
-    <div class="center reveal"><span class="eyebrow">What we look for</span><h2>Is my land suitable?</h2><p class="lead">We're interested in a wide range of sites across the North of England and Scotland. Typically we look for:</p></div>
+    <div class="center reveal"><span class="eyebrow">What we look for</span><h2>Is my land suitable?</h2><p class="lead">We're always seeking new sites and opportunities across our regions, and we welcome approaches from landowners and agents.</p></div>
     <div class="grid grid--4" style="margin-top:48px">
-      <div class="feature reveal"><h3>5+ acres</h3><p>Sites of around five acres or more, although we consider smaller sites in the right location.</p></div>
+      <div class="feature reveal"><h3>Our regions</h3><p>The North West, North East, Cumbria and Scotland.</p></div>
       <div class="feature reveal"><h3>Edge of settlement</h3><p>Land adjoining existing towns and villages, close to services and transport.</p></div>
-      <div class="feature reveal"><h3>Any current use</h3><p>Agricultural land, paddocks, brownfield sites and estates of all sizes.</p></div>
-      <div class="feature reveal"><h3>Long-term view</h3><p>Promotion can take several years. We're committed for the long haul.</p></div>
+      <div class="feature reveal"><h3>With or without planning</h3><p>Land that is ready to develop, and strategic land that doesn't have planning permission yet.</p></div>
+      <div class="feature reveal"><h3>Short to long term</h3><p>Short, medium and long-term strategic sites, including some that may take up to 15 years.</p></div>
     </div>
   </div>
 </section>
@@ -410,11 +424,11 @@ land = head("For Landowners | Story Homes Land", "How Story Homes Land works wit
   <div class="container">
     <div class="center reveal"><span class="eyebrow">FAQs</span><h2>Frequently asked questions</h2></div>
     <div class="faq">
-      <details><summary>How much does it cost me?</summary><p>Nothing. We fund all costs associated with promoting your land through planning, and we typically make a contribution towards your own legal and professional fees.</p></details>
-      <details><summary>How long does the process take?</summary><p>It depends on the site and the stage of the Local Plan. It can range from two years to ten years or more. We'll give you a realistic timescale at the outset.</p></details>
+      <details><summary>Who pays for the promotion?</summary><p>We do. Story Homes finances all aspects of land promotion so your risk stays low. The details, including any contribution to your professional fees, are set out in each agreement.</p></details>
+      <details><summary>How long does the process take?</summary><p>It depends on the site. Land with outline permission can move quickly, while strategic sites promoted through Local Plans can take up to 15 years. We'll be realistic with you from the start.</p></details>
       <details><summary>Do I still own my land during promotion?</summary><p>Yes. You retain ownership and can continue to farm or use the land as normal until it is sold.</p></details>
-      <details><summary>What happens if planning permission isn't granted?</summary><p>We bear the cost and risk. If we're unsuccessful you won't be out of pocket, and you'll keep any evidence and reports we've produced, as set out in our agreement.</p></details>
-      <details><summary>Why choose a promoter backed by a housebuilder?</summary><p>We understand what makes a scheme deliverable and attractive to buyers, which strengthens the planning case and gives confidence that homes will actually be built.</p></details>
+      <details><summary>How quickly will I get an answer?</summary><p>Quickly. We aim to tell you promptly whether your site is one we'd look to purchase, so you're not left waiting.</p></details>
+      <details><summary>Why work with a housebuilder rather than a promoter?</summary><p>We understand what makes a scheme deliverable and attractive to buyers, which strengthens the planning case and gives confidence that homes will actually be built.</p></details>
     </div>
   </div>
 </section>
@@ -426,7 +440,7 @@ land = head("For Landowners | Story Homes Land", "How Story Homes Land works wit
 write("landowners.html", land)
 
 # ---------------- PROJECTS ----------------
-projects = head("Projects | Story Homes Land", "Case studies of land promoted by Story Homes Land.") + header("projects.html") + page_hero("Projects","Our projects","A selection of the sites we've promoted and secured planning on, in partnership with landowners across our regions.", "masterplan.svg") + f"""<main>
+projects = head("Projects | Story Homes Land", "Case studies of land promoted by Story Homes Land.") + header("projects.html") + page_hero("Projects","Our projects","A selection of recent planning consents, applications and land acquisitions across our regions. Click through to read the full stories on storyhomes.co.uk.", "masterplan.svg") + f"""<main>
 <section class="section">
   <div class="container">
     <div class="filters" role="group" aria-label="Filter projects by region">
@@ -462,12 +476,12 @@ news = head("News | Story Homes Land", "Latest news and insights from Story Home
 write("news.html", news)
 
 # ---------------- CONTACT ----------------
-contact = head("Contact Us | Story Homes Land", "Contact Story Homes Land for a free land appraisal.") + header("contact.html") + page_hero("Contact","Talk to our land team","Tell us about your land and one of our team will be in touch for a confidential, no-obligation conversation.", "meeting.svg") + f"""<main>
+contact = head("Contact Us | Story Homes Land", "Contact Story Homes Land for a free land appraisal.") + header("contact.html") + page_hero("Contact","Talk to our Strategic Land team","We welcome approaches from landowners and agents, and we'll respond quickly.", "meeting.svg") + f"""<main>
 <section class="section">
   <div class="container contact-grid">
     <div>
       <h2>Submit your land</h2>
-      <p class="lead" style="margin-bottom:32px">The more you can tell us, the quicker we can give you an initial view.</p>
+      <p class="lead" style="margin-bottom:32px">Tell us about your site and a member of the Strategic Land team will respond quickly.</p>
       <form class="form" novalidate>
         <div><label for="name">Full name *</label><input id="name" name="name" required autocomplete="name"></div>
         <div><label for="email">Email *</label><input id="email" name="email" type="email" required autocomplete="email"></div>
@@ -483,10 +497,8 @@ contact = head("Contact Us | Story Homes Land", "Contact Story Homes Land for a 
       <div class="form__success" role="status">Thank you. Your enquiry has been received and a member of our land team will be in touch shortly.</div>
     </div>
     <aside>
-      <div class="office"><h3>Head Office</h3><p>Office address line 1<br>Town, County<br>Postcode</p><p style="margin-top:10px"><a href="tel:{PHONE.replace(' ','')}">{PHONE}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
-      <div class="office"><h3>North West</h3><p>Office address<br>Town, Postcode</p></div>
-      <div class="office"><h3>North East</h3><p>Office address<br>Town, Postcode</p></div>
-      <div class="office"><h3>Scotland</h3><p>Office address<br>Town, Postcode</p></div>
+{chr(10).join(f'      <div class="office"><h3>{n}</h3><p>{r}</p><p style="margin-top:10px"><a href="tel:{t.replace(" ","")}">{t}</a><br><a href="mailto:{e}">{e}</a></p></div>' for n,r,t,e in CONTACTS)}
+      <div class="office"><h3>Planning applications</h3><p>For current applications and consultations, visit the <a href="{SH}/land-and-planning/planning-applications/" target="_blank" rel="noopener">Story Homes planning applications page</a>.</p></div>
     </aside>
   </div>
 </section>

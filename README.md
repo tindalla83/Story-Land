@@ -22,10 +22,12 @@ Styles are in `assets/css/styles.css` and behaviour (sticky header, mobile menu,
 ## Preview
 Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.
 
-## Placeholders to replace before launch
-- Statistics (acres, plots, success rate), testimonials, team names and photos, project and news content
-- Phone number, email address and office addresses (`PHONE` / `EMAIL` at the top of `tools/build.py`)
-- Illustrations in `assets/img/` (swap for real photography)
-- The logo (`assets/img/logo.svg`), which should be replaced with the official brand mark
+## Content source
+Content is based on the Story Homes Strategic Land page (https://www.storyhomes.co.uk/land-and-planning/strategic-land/) and related Story Homes land and planning news. All copy is paraphrased. Project and news cards link back to the original articles on storyhomes.co.uk.
+
+## Still to replace before launch
+- Illustrations in `assets/img/` (swap for real site photography) and the logo (`assets/img/logo.svg`), which should be replaced with the official brand mark
+- Team photos (currently silhouettes)
 - The enquiry form is front-end only. Connect it to a form service or CRM to receive submissions.
 - The Privacy, Cookies and Terms links
+- Check that contact details, figures and project stages are current before publishing
