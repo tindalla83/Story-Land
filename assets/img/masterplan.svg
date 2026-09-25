@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="600" fill="#f2efe6"/>
+  <path d="M0 0 H800 V600 H0Z" fill="none" stroke="#c9a45c" stroke-width="6" stroke-dasharray="18 10"/>
+  <path d="M-10 420 C 200 380 380 460 560 360 S 760 260 820 280" fill="none" stroke="#9cb8c9" stroke-width="26"/>
+  <g fill="#bcd4b8"><path d="M40 60 H300 V200 H40Z"/><path d="M560 420 H760 V560 H560Z"/><circle cx="420" cy="140" r="70"/></g>
+  <g fill="none" stroke="#fff" stroke-width="18"><path d="M0 300 H800"/><path d="M340 0 V600"/><path d="M340 300 C 450 240 520 230 620 180"/></g>
+  <g fill="#c98a6b">
+    <rect x="60" y="230" width="40" height="30"/><rect x="115" y="230" width="40" height="30"/><rect x="170" y="230" width="40" height="30"/><rect x="225" y="230" width="40" height="30"/>
+    <rect x="60" y="330" width="40" height="30"/><rect x="115" y="330" width="40" height="30"/><rect x="170" y="330" width="40" height="30"/><rect x="225" y="330" width="40" height="30"/>
+    <rect x="380" y="330" width="40" height="30"/><rect x="435" y="330" width="40" height="30"/><rect x="490" y="310" width="40" height="30"/>
+    <rect x="560" y="60" width="40" height="30"/><rect x="615" y="60" width="40" height="30"/><rect x="670" y="60" width="40" height="30"/><rect x="560" y="110" width="40" height="30"/><rect x="615" y="110" width="40" height="30"/>
+    <rect x="80" y="470" width="40" height="30"/><rect x="135" y="470" width="40" height="30"/><rect x="190" y="470" width="40" height="30"/><rect x="245" y="470" width="40" height="30"/>
+  </g>
+  <g fill="#3d8a6c"><circle cx="90" cy="110" r="14"/><circle cx="140" cy="140" r="12"/><circle cx="240" cy="100" r="16"/><circle cx="620" cy="480" r="16"/><circle cx="700" cy="510" r="14"/><circle cx="420" cy="140" r="20"/></g>
+</svg>
